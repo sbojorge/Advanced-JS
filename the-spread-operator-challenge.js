@@ -19,6 +19,7 @@ let students = [
   },
 ];
 
+// CI has the same solution as mine
 let subjects = [...students[0].subjects];
 
 const update = (item, val) => [...item, val];
