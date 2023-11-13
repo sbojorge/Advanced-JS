@@ -41,3 +41,42 @@ console.log(firstLanguage, secondLanguage, others2);
 
 let {thirdLanguage, fourthLanguage} = languages2;
 console.log(thirdLanguage, fourthLanguage);
+
+// destructuring with function
+const calculate = (a, b) => {
+    let add = a + b;
+    let substract = a - b;
+    let multiply = a * b;
+    let divide = a / b;
+
+    return [add, substract, multiply, divide];
+}
+
+const [add, substract, multiply, divide] = calculate(4, 7);
+console.log(add, substract, multiply, divide);
+
+// destructuring an object inside a function
+const vehicule = {
+    brand: 'Ford',
+    model: 'Mustang',
+    type: 'car',
+    year: 2021,
+    color: 'red',
+    registration: {
+        city: 'Houston',
+        state: 'Texas',
+        country: 'USA'
+    }
+};
+
+const myVehicule = ({type, color, brand, model}) => 
+    ' My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+
+let test = myVehicule(vehicule);
+console.log(test);
+
+// destructuring nested objects and using template literals
+const myVehicule1 = ({type, registration: {state}}) => `My ${type} is registered in ${state}.`;
+
+let test2 = myVehicule1(vehicule);
+console.log(test2);
